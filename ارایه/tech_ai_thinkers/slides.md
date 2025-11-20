@@ -3,9 +3,9 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: /takhte-jamshid.jpg
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: Geofence with Semantic search
 info: |
   ## AI thinkers 
 # apply UnoCSS classes to the current slide
@@ -21,7 +21,7 @@ mdc: true
 duration: 10min
 ---
 
-# Mixing Geofence with Semantic search for 
+# Mixing Geofence with Semantic search for Youz
 
 
 ---
@@ -85,3 +85,18 @@ layout: center
 ---
 
 # Lets see in the code!!!
+
+---
+
+# Stack
+
+- C#
+- Semantic kernel
+- PostgreSQL
+  - NetTopologySuite
+  - Pgvector
+- SemanticKernel
+- AI Models
+  - gemini-embedding-001
+  - gemini-2.5-flash-lite
+  - Nomic Embed Vision v1.5
