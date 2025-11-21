@@ -54,29 +54,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-app.MapPost("/near-location", async (ApplicationDbContext dbContext, PointDto point, int radius = 10) =>
-{
-    var g = new Point(new Coordinate(point.Latitude, point.Longitude));
-    return await dbContext.Landmarks.Where(c => c.Location.Distance(g) > radius).ToListAsync();
-}).WithName("GetNearLocation");
 app.MapPost("/landmark/create", async (ApplicationDbContext dbContext, IMapper mapper, Kernel kernel, LandmarkDto landmark) =>
 {
     var entity = mapper.Map<Landmark>(landmark);
@@ -146,10 +123,6 @@ app.MapPost("/answer-question", async (ApplicationDbContext dbContext, IMapper m
 
     return result.Content;
 }).WithName("Answer");
-app.MapGet("test", (IMapper mapper) =>
-{
-    return mapper.Map<Point, PointDto>(new Point(new Coordinate(4, 23.5)));
-});
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
