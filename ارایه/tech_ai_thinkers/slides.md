@@ -21,19 +21,25 @@ mdc: true
 duration: 10min
 ---
 
-# Mixing Geofence with Semantic search for Youz
+# Mixing Geofence with Semantic search in RAG
 
+Behrooz Bozorgchamy
 
 ---
 
 
-# What is Youz?
+# Where need this?
 
 Youz is a smart, AI-powered app that removes language and information barriers while traveling. Just install the Youz app on your phone, point your camera at a historical monument, temple, museum, scenic site or ask question about a place, and Youz instantly delivers detailed, accurate information about the location in your native language — both as clear audio narration and on-screen text.
 
 --- 
 
-# The main problem
+# What is RAG?
+
+RAG (Retrieval-Augmented Generation) is an AI method introduced by Facebook AI Research (FAIR). It improves large language models by letting them retrieve relevant information from external sources before generating text, which makes answers more accurate, up-to-date, and context-specific while reducing hallucinations.
+---
+
+# The main problem 😢
 
 The landmark can be very similar but with different history, usage, city and meaning! which cause simple RAG return inaccurate data! This problem is very critical for your users because we want to help them to understand landmarks. 
 
@@ -41,7 +47,7 @@ The landmark can be very similar but with different history, usage, city and mea
 layout: two-cols-header
 ---
 
-# Example:  Zoroastrian fire temple
+# Example:  Zoroastrian fire temples
 
 ::left::
 <style>
@@ -98,6 +104,7 @@ Make the prompt and get the result!
   - gemini-embedding-001
   - gemini-2.5-flash-lite
   - Nomic Embed Vision v1.5
+  
 ---
 layout: center
 ---
